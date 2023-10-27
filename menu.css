@@ -1,0 +1,190 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Dongle&family=Jost:wght@400;500&family=Poppins:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --big-circle-size: 350px;
+  --big-circle-bgcolor: rgba(255, 255, 255, 0.8);
+  --small-circle-size: 100px;
+  --small-circle-bgcolor: white;
+
+  --font-size-900: 30px;
+  --font-size-200: 9px;
+
+}
+
+
+body {
+  height: 100vh;
+  background-color: #333;
+  font-size: var(--font-size-900);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Jost', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* main container */
+.menu {
+  position: relative;
+  width: var(--big-circle-size);
+  height: var(--big-circle-size);
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 1s;
+
+}
+
+/* toggle div */
+.menu .toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu .toggle:is(:hover, :focus) {
+  cursor: pointer;
+}
+
+.menu ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.menu.active ul {
+  display: none;
+  list-style: none;
+  position: relative; 
+  
+  width: var(--big-circle-size);
+  height: var(--big-circle-size);
+  background-color: var(--big-circle-bgcolor);
+
+  list-style: none;
+  transition: 0.5s;
+
+  border-radius: 50%;
+  /* by using transform origin below. it set's the position at same distance,
+  but to set one icon at top center, this rotation is placed. */
+  transform: rotate(30deg);
+}
+
+ul::before {
+  content: "";
+  position: absolute;
+  top: 112px;
+  left: 112px;
+  
+  width: calc(var(--big-circle-size)/3  );
+  height: calc(var(--big-circle-size)/3);
+  background-color: var(--small-circle-bgcolor);
+
+  /* background-color: rgba(190, 148, 243, 0.2); */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+ul li {
+  --rotate: 0;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: calc(var(--big-circle-size)/2.6);
+  left: calc(var(--big-circle-size)/24);
+
+  transform: rotate(var(--rotate));
+  transform-origin: calc(var(--big-circle-size)/2.35);
+}
+
+/* using transoform origin to set the positions of icons */
+
+li:nth-child(1) {
+  --rotate: calc(360deg/ 6);
+}
+
+li:nth-child(2) {
+  margin-top: 1rem;
+  --rotate: calc(360deg/ 6*2);
+}
+
+li:nth-child(3) {
+  --rotate: calc(360deg/ 6*3);
+}
+
+li:nth-child(4) {
+  --rotate: calc(360deg/ 6*4);
+}
+
+li:nth-child(5) {
+  --rotate: calc(360deg/ 6*5);
+}
+
+li:nth-child(6) {
+  --rotate: calc(360deg/ 6*6);
+}
+
+
+li > div {
+  font-size: var(--font-size-900);
+  transform: rotate(calc(1deg *var(--rotate)));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p {
+  font-size: var(--font-size-200);
+}
+
+li:is(:hover, :focus) {
+  cursor: pointer;
+
+}
+
+/* fill property is not working.. */
+.icon { 
+  width: 25px; 
+  height: 25px; 
+  aspect-ratio: 1;
+  fill: red;
+}
+
+
+
+.menu.active ul {
+  display: block;
+}
+
+

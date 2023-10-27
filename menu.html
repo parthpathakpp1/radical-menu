@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radial menu</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <div class="menu active">
+    <div class="toggle">
+      <svg class="icon">
+        <use xlink:href="all-icons.svg#cross"></use>
+      </svg>
+    </div>
+
+    <ul class="icons">
+      <li>
+        <div style="--rotate: -90;">
+          <a href="">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#reels"></use>
+            </svg>
+          </a>
+          <p>Reels/Shorts</p>
+        </div>
+      </li>
+      <li>
+        <div style="--rotate: -151;">
+          <a href="">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#post"></use>
+            </svg>          
+          </a>
+          <p>Post</p>
+        </div>
+      </li>
+      <li>
+        <div style="--rotate: 151;">
+          <a href="#">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#live"></use>
+            </svg>  
+          </a>
+          <p>Live/event</p>
+        </div>
+      </li>
+      <li>
+        <div style="--rotate: 90;">
+          <a href="">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#poll"></use>
+            </svg>  
+          </a>
+          <p>Poll</p>
+        </div>
+      </li>
+      <li>
+        <div style="--rotate: 30;">
+          <a href="">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#carousel"></use>
+            </svg> 
+          </a>
+          <p>Carousel</p>
+        </div>
+      </li>
+      <li>
+        <div style="--rotate: -30;">
+          <a href="">
+            <svg class="icon">
+              <use xlink:href="all-icons.svg#video"></use>
+            </svg> 
+          </a>
+          <p>Video content</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="index.js"></script>
+
+  <!-- https://ionic.io/ionicons/usage -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
