@@ -16,7 +16,13 @@
   --font-size-900: 30px;
   --font-size-200: 9px;
 
+  font-size: var(--font-size-900);
+  font-family: 'Be Vietnam Pro', 'Dongle', 'Jost', 'Poppins', sans-serif;
+  font-weight: 500;
 }
+
+/* The rest of your CSS remains unchanged */
+
 
 
 body {
@@ -88,10 +94,7 @@ body {
 
   list-style: none;
   transition: 0.5s;
-
-  border-radius: 50%;
-  /* by using transform origin below. it set's the position at same distance,
-  but to set one icon at top center, this rotation is placed. */
+   border-radius: 50%;
   transform: rotate(30deg);
 }
 
@@ -162,7 +165,15 @@ li > div {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all 0.3s ease; /* added transition property */
 }
+
+li:hover > div {
+  background-color: rgba(255, 255, 255, 0.2); 
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 
 p {
   font-size: var(--font-size-200);
@@ -173,7 +184,6 @@ li:is(:hover, :focus) {
 
 }
 
-/* fill property is not working.. */
 .icon { 
   width: 25px; 
   height: 25px; 
